@@ -27,6 +27,12 @@ pub fn build(b: *std.build.Builder) !void {
         .install_subdir = "ftxui/screen",
         .exclude_extensions = &.{".c"},
     });
+    screen.installHeadersDirectoryOptions(.{
+        .source_dir = std.Build.LazyPath{ .path = "include/ftxui/util" },
+        .install_dir = .header,
+        .install_subdir = "ftxui/util",
+        .exclude_extensions = &.{".c"},
+    });
     b.installArtifact(screen);
 
     const dom = b.addStaticLibrary(.{
