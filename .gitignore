@@ -16,6 +16,7 @@
 !flake.nix
 !ftxui.pc.in
 !iwyu.imp
+!build.zig
 
 # .github directory:
 !.github/**/*.yaml
